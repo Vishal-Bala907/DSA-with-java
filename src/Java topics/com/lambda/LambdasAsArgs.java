@@ -24,16 +24,21 @@ public class LambdasAsArgs {
         // method reference
         /*
         *   interface StringFunct{
-        *       String funct(String s);
+        *       String function(String s);
         *   }
         *  since this returns a String value so in the method reference, we supply the Classname whose
         * method we are going to pass and then two colon followed by the method name
         *
         * */
-        String methodRef = LambdasAsArgumentDemo.function(LambdasAsArgumentDemo::getLength, "hello everyone");
+       String methodRef = LambdasAsArgumentDemo.function(LambdasAsArgumentDemo::getLength, "hello everyone");
+ //       String methodRef = LambdasAsArgumentDemo.function(LambdasAsArgumentDemo::getLength, "hello everyone");
+//        LambdasAsArgumentDemo.function((str)->{
+//            return String.valueOf(str.length());
+//        }, "hello everyone");
+
 
         // remove white spaces
-        String spaces =LambdasAsArgumentDemo.function((str)->{
+        String spaces = LambdasAsArgumentDemo.function((str)->{
             String removed = "";
             for(int i=0;i<str.length()-1;i++){
                 if(! (str.charAt(i)==' ')){
