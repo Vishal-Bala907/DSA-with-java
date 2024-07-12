@@ -32,31 +32,33 @@ class ValidateParenthesis{
         for(int i = 0; i < bracks.size(); ){
             System.out.println(i);
             int k =0;
+            if(bracks.size() == 1)
+                return false;
             for(int j = 1; j <  bracks.size(); j++){
-                if( (bracks.get(j).equals("(")  && (bracks.get(j+1).equals("}") || bracks.get(j+1).equals("]")))
-                    || (bracks.get(j).equals("{")  && (bracks.get(j+1).equals(")") || bracks.get(j+1).equals("]")))
-                        || (bracks.get(j).equals("[")  && (bracks.get(j+1).equals("}") || bracks.get(j+1).equals(")")))
+                if( (bracks.get(k).equals("(")  && (bracks.get(j).equals("}") || bracks.get(j).equals("]")))
+                    || (bracks.get(k).equals("{")  && (bracks.get(j).equals(")") || bracks.get(j).equals("]")))
+                        || (bracks.get(k).equals("[")  && (bracks.get(j).equals("}") || bracks.get(j).equals(")")))
                 ){
                     return false;
                 }
-                if((bracks.get(k).equals("(") && bracks.get(j).equals(")"))) {
-                    System.out.println(bracks.get(k)+" = "+bracks.get(j));
+              else  if((bracks.get(k).equals("(") && bracks.get(j).equals(")"))) {
                     bracks.remove(j);
                     bracks.remove(k);
                     break;
                 }
                else if(bracks.get(k).equals("{") && bracks.get(j).equals("}")) {
-                    System.out.println(bracks.get(k)+" = "+bracks.get(j));
                     bracks.remove(j);
                     bracks.remove(k);
                    break;
                 }
                else if(bracks.get(k).equals("[") && bracks.get(j).equals("]")){
-                    System.out.println(bracks.get(k)+" = "+bracks.get(j));
                     bracks.remove(j);
                     bracks.remove(k);
                     break;
+                }else{
+                    i++;
                 }
+
             }
         }
         return bracks.isEmpty();
