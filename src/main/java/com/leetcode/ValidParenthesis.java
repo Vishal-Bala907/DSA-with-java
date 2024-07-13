@@ -27,38 +27,35 @@ import java.util.List;
 
 class ValidateParenthesis{
     public boolean isValid(String s) {
+        // SOLVED
         String[] chars = s.split("");
         List<String> bracks = new ArrayList<>(List.of(chars));
-        for(int i = 0; i < bracks.size(); ){
-            System.out.println(i);
-            int k =0;
-            if(bracks.size() == 1)
-                return false;
-            for(int j = 1; j <  bracks.size(); j++){
-                if( (bracks.get(k).equals("(")  && (bracks.get(j).equals("}") || bracks.get(j).equals("]")))
-                    || (bracks.get(k).equals("{")  && (bracks.get(j).equals(")") || bracks.get(j).equals("]")))
-                        || (bracks.get(k).equals("[")  && (bracks.get(j).equals("}") || bracks.get(j).equals(")")))
+
+        if(chars.length % 2 != 0)
+            return false;
+
+        for(int i = 0; i <= bracks.size(); i++) {
+
+            for(int j=0; j < bracks.size()-1; j++ ) {
+
+                String first = bracks.get(j);
+                String second = bracks.get(j+1);
+
+                if((first.equals("(") && second.equals(")")) ||
+                   (first.equals("{") && second.equals("}")) ||
+                   (first.equals("[") && second.equals("]"))
+                ){
+                    bracks.remove(j);
+                    bracks.remove(j);
+                    i = 0;
+                    break;
+                }else if(
+                        (first.equals("(") && (second.equals("}") || second.equals("]")) ) ||
+                        (first.equals("{") && (second.equals("]") || second.equals(")")) ) ||
+                        (first.equals("[") && (second.equals("}") || second.equals(")")) )
                 ){
                     return false;
                 }
-              else  if((bracks.get(k).equals("(") && bracks.get(j).equals(")"))) {
-                    bracks.remove(j);
-                    bracks.remove(k);
-                    break;
-                }
-               else if(bracks.get(k).equals("{") && bracks.get(j).equals("}")) {
-                    bracks.remove(j);
-                    bracks.remove(k);
-                   break;
-                }
-               else if(bracks.get(k).equals("[") && bracks.get(j).equals("]")){
-                    bracks.remove(j);
-                    bracks.remove(k);
-                    break;
-                }else{
-                    i++;
-                }
-
             }
         }
         return bracks.isEmpty();
@@ -68,6 +65,26 @@ public class ValidParenthesis {
     public static void main(String[] args) {
 
         ValidateParenthesis v = new ValidateParenthesis();
-        System.out.println(v.isValid("([)]"));
+        System.out.println("false "+v.isValid("([[])]"));
+        System.out.println("false "+v.isValid("([[])]"));
+        System.out.println("true "+v.isValid("([[]]){}"));
+
+        System.out.println("false "+v.isValid("{{([[]]){}"));
+        System.out.println("false "+v.isValid("{{"));
+        System.out.println("false "+v.isValid("[{}(}])"));
+        System.out.println("false "+v.isValid("{{{}}}{}{}{{]"));
+        System.out.println("false "+v.isValid("[[]]({{})()}"));
+
+        System.out.println("false "+v.isValid("{}{}{{))))"));
+        System.out.println("false "+v.isValid("[][]({})]"));
+        
+        System.out.println("true "+v.isValid("[{}](){}[]()"));
+        System.out.println("true "+v.isValid("{{{}}}{}{}{{[]}}"));
+        System.out.println("true "+v.isValid("[[]]({{}})(){}"));
+
+        System.out.println("true "+v.isValid("{}{}{{(())}}(())"));
+        System.out.println("true "+v.isValid("[][]({})[]"));
+
+
     }
 }
