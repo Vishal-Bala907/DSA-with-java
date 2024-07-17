@@ -5,18 +5,15 @@ import java.util.UUID;
 
 interface MethodReferenceDemo<T>{
     T methodReference(T t);
-
 }
 
 //
 class MethodHereForReference {
 
     public static String doSomething(MethodReferenceDemo<String> t,String str) {
-        //
             return t.methodReference(str);
     }
     public  Integer doSomething2(MethodReferenceDemo<Integer> t,Integer i) {
-        //
             return t.methodReference(i);
     }
 }
@@ -29,38 +26,6 @@ class ReferencedMethodClass{
     public static int referenceThisMehtod2(Integer i){
         return 123 * i;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 public class MethodReference {

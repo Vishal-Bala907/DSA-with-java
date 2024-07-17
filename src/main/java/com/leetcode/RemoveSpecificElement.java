@@ -5,6 +5,34 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+class LeetCodePlusOne{
+    public static int[] plusOne(int[] digits) {
+        int carry = 1;
+        boolean plusOne = true,allNine = true;
+        for(int i = digits.length - 1; i >= 0; i--){
+            if(digits[i] == 9 && carry == 1){
+                digits[i] = 0;
+            }else{
+                digits[i] = plusOne ? ++digits[i] : digits[i];
+                carry = 0;
+                plusOne = false;
+                allNine = false;
+            }
+        }
+
+        if(allNine){
+            int[] newArr = new int[digits.length + 1];
+            for(int i=0;i<digits.length;i++){
+                newArr[i+1] = digits[i];
+            }
+            newArr[0] = 1;
+            return newArr;
+        }else{
+            return digits;
+        }
+    }
+}
+
 class RemoveSpecific{
     public static int removeElement(int[] nums, int val) {
 
@@ -34,33 +62,11 @@ public class RemoveSpecificElement {
 
             int[] digits = {9,9,9,9,9,9,9,9};
 
-            int carry = 1;
-            boolean plusOne = true,allNine = true;
-            for(int i = digits.length - 1; i >= 0; i--){
-                if(digits[i] == 9 && carry == 1){
-                    digits[i] = 0;
-                }else{
-                    digits[i] = plusOne ? ++digits[i] : digits[i];
-                    carry = 0;
-                    plusOne = false;
-                    allNine = false;
-                }
-            }
 
-            if(allNine){
-                int[] newArr = new int[digits.length + 1];
-                for(int i=0;i<digits.length;i++){
-                    newArr[i+1] = digits[i];
-                }
-                newArr[0] = 1;
-                return newArr;
-            }else{
-                return digits;
-            }
-
-            for(int i=0;i<newArr.length;i++){
-                System.out.print(newArr[i]+" , ");
-            }
+//
+//            for(int i=0;i<newArr.length;i++){
+//                System.out.print(newArr[i]+" , ");
+//            }
 
 
 

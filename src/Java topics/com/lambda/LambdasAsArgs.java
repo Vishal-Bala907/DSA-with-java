@@ -18,7 +18,7 @@ public class LambdasAsArgs {
 
         // Converting string to uppercase
         String upCase = "";
-        upCase = LambdasAsArgumentDemo.function(str->str.toUpperCase() , "hello everyone" );
+        upCase = LambdasAsArgumentDemo.function(String::toUpperCase , "hello everyone" );
         System.out.println("Uppercase "+upCase);
 
         // method reference
