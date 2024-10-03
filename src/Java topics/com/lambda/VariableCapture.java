@@ -11,7 +11,8 @@ public class VariableCapture {
         String s ="prefix";
 
         VariableCaptureDemo<String> str = (strPara)->{
-            strPara += s;
+            strPara += s; // no-error
+        //  s+=strPara; // error:trying to modify the effectively final variable
             return String.valueOf(strPara.length());
         };
        System.out.println(str.getN("Hello"));

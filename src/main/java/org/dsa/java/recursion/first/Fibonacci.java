@@ -1,4 +1,4 @@
-package org.dsa.java.recursion;
+package org.dsa.java.recursion.first;
 
 public class Fibonacci {
 

@@ -1,8 +1,4 @@
-package com.leetcode;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package com.leetcode.easy;
 
 /*
 * Write a function to find the longest common prefix string amongst an array of strings.

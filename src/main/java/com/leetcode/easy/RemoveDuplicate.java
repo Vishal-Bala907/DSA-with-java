@@ -1,9 +1,4 @@
-package com.leetcode;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package com.leetcode.easy;
 
 class RemoveDupli {
     public int removeDuplicates(int[] nums) {
