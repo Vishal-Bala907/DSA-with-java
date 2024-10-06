@@ -3,6 +3,8 @@ package com.lambda;
 interface StringFunct{
     String funct(String s);
 }
+
+
 class LambdasAsArgumentDemo {
     static String function(StringFunct stringFunct ,String str){
         // stringFunct = str -> str.toUpperCase()
