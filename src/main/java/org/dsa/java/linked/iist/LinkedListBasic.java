@@ -92,39 +92,9 @@ public class LinkedListBasic {
 
     }
 
-    public LinkedListBasicNode reverseListRecursive(LinkedListBasicNode headNode ) {
 
-        if(headNode == null || headNode.next == null) {
-            return headNode;
-        }
-        LinkedListBasicNode newHead = reverseListRecursive(headNode.next);
-        headNode.next.next = headNode;
-        headNode.next = null;
 
-        return newHead;
 
-    }
-
-    public void reverseListItr() {
-
-        if(head == null || head.next == null) {
-            return;
-        }
-        LinkedListBasicNode prev = head;
-        LinkedListBasicNode current = head.next;
-        LinkedListBasicNode forward = current.next;
-
-        while (forward != null) {
-            current.next = prev;
-            prev = current;
-            current = forward;
-            forward = forward.next;
-        }
-
-        head.next = null;
-        current.next = prev;
-        head = current;
-    }
 
     public static void main(String[] args) {
 
@@ -145,8 +115,8 @@ public class LinkedListBasic {
 
 //        head.reverseListItr();
 //        head.printList();
-         head.head = head.reverseListRecursive(head.head);
-        head.printList();
+/*         head.head = head.reverseListRecursive(head.head);
+        head.printList();*/
 
 
     }

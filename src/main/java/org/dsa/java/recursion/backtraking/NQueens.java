@@ -110,7 +110,7 @@ public class NQueens {
         helper(board,allBoards,0);
 
 
-    return allBoards;
+        return allBoards;
     }
 
     public static void main(String[] args) {
