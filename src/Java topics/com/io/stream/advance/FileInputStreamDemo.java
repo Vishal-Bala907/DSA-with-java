@@ -1,8 +1,7 @@
-package com.io.stream.advacne;
+package com.io.stream.advance;
 
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 // FileInputStream(String filePath)

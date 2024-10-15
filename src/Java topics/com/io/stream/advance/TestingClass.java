@@ -1,4 +1,4 @@
-package com.io.stream.advacne;
+package com.io.stream.advance;
 
 public class TestingClass {
    static  {
