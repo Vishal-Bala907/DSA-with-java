@@ -210,6 +210,40 @@ public class BasicBinaryTree {
             return diameter;
         }
 
+        /*
+        * 1) Check the subtree root with tree root
+        * 2.) If equal, then check the remaining corresponding root
+        * 3.) If not equal, then check the left subtree of tree or right subtree of tree
+        * */
+        public static boolean isIdentical(Node tree, Node subtree) {
+                if(tree == null && subtree == null ) {
+                    return true;
+                }
+                if(tree == null || subtree == null ) {
+                    return false;
+                }
+                if(tree.data == subtree.data) {
+                    return isIdentical(tree.left,subtree.left) && isIdentical(tree.right,subtree.right);
+                }
+                return false;
+        }
+        public static boolean subTreeOfTree(Node tree, Node subtree) {
+            if(subtree == null) {
+                return true;
+            }
+            if(tree==null) {
+                return false;
+            }
+
+            if(tree.data == subtree.data) {
+                if(isIdentical(tree,subtree)) {
+                    return true;
+                }
+            }
+            return subTreeOfTree(tree.left,subtree) || subTreeOfTree(tree.right, subtree);
+
+        }
+
         public static void main(String[] args) {
             int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
             Node head = BinaryTree.buildTree(nodes);
