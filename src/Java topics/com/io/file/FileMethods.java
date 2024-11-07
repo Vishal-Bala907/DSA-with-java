@@ -2,6 +2,8 @@ package com.io.file;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class FileMethods {
     public static void main(String[] args) {
@@ -29,11 +31,14 @@ public class FileMethods {
 
             // deleting the file
             boolean delete = file2.delete();
+
+
             System.out.println(delete ? "file deleted" : "file could not be deleted");
         }catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
 //        file.
+
 
         // Directory
         File file3 = new File("E:/DSA with java/DSA with java");
