@@ -1,0 +1,11 @@
+Graph is network of nodes
+** Terminologies **
+- in generally we call a node vertex or vertices in plural
+- Edges -> connects two vertices
+
+** Types of graph **
+
+1.) Directed graph
+2.) Un-Directed graph
+3.) Weighted graph
+4.) Un-Weighted graph

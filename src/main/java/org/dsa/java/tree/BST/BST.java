@@ -41,8 +41,8 @@ public class BST {
             return;
         }
         printInorder(root.left);
-        System.out.print(root.data+" , ");
         printInorder(root.right);
+        System.out.print(root.data+" , ");
     }
 
     // Search BST
@@ -141,7 +141,7 @@ public class BST {
         for(int i :values) {
             root = createNode(root , i);
         }
-//        printInorder(root);
+        printInorder(root);
         System.out.println();
 
 //        for(int v :values) {

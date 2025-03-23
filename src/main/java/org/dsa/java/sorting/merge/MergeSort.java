@@ -1,5 +1,7 @@
 package org.dsa.java.sorting.merge;
 
+import java.util.Arrays;
+
 interface Sort {
   void devideTheArray(int si, int ei, int[] arr);
   void sortTheArray(int si, int mid, int end , int[] arr);
@@ -47,6 +49,7 @@ class MergerAscending implements Sort {
             merger[x++] = arr[idx2++];
         }
 
+        System.out.println(Arrays.toString(merger));
         // merger to original array
         for(int i=0, j=si; i < merger.length; i++,j++) {
             arr[j] = merger[i];

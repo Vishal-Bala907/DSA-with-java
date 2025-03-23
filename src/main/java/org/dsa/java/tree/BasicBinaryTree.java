@@ -1,7 +1,6 @@
 package org.dsa.java.tree;
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class BasicBinaryTree {
@@ -250,7 +249,7 @@ public class BasicBinaryTree {
 //        System.out.println(head.data);
 //        BinaryTree.traverse(head);
 //        System.out.println("\nInorder Traversal");
-//        BinaryTree.printInorder(head);
+        BinaryTree.printInorder(head);
 //        System.out.println("\nPostOrder Traversal");
 //        BinaryTree.printPostOrder(head);
 //            System.out.println("\nLevel Order Traversal");
