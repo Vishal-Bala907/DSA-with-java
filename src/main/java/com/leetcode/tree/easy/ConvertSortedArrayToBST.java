@@ -24,12 +24,28 @@ public class ConvertSortedArrayToBST {
 
     public static TreeNode sortedArrayToBST(int[] nums) {
 
-      TreeNode root = null;
-      for(int n:nums) {
-          root = createTree(root,n);
-      }
-      return root;
+      int mid = nums.length / 2;
 
+      TreeNode node = new TreeNode(nums[mid]);
+      node.left = createLeftSubTree(--mid, nums);
+      node.right = createRightSubTree(++mid, nums);
+
+      return node;
+
+    }
+    public static TreeNode createLeftSubTree(int index ,int[] nums) {
+      if(index <= 0) {
+          return null;
+      }
+      TreeNode node = new TreeNode(nums[index]);
+      return node.left = createLeftSubTree(--index , nums);
+    }
+    public static TreeNode createRightSubTree(int index ,int[] nums) {
+        if(index >= nums.length - 1) {
+            return null;
+        }
+        TreeNode node = new TreeNode(nums[index]);
+        return node.right = createLeftSubTree(++index , nums);
     }
 
     private static TreeNode createTree(TreeNode node , int n) {
