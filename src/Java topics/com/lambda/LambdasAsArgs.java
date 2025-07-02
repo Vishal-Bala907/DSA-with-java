@@ -6,7 +6,7 @@ interface StringFunct{
 
 
 class LambdasAsArgumentDemo {
-    static String function(StringFunct stringFunct ,String str){
+   static String function(StringFunct stringFunct ,String str){
         // stringFunct = str -> str.toUpperCase()
         return stringFunct.funct(str);
     }
@@ -18,6 +18,9 @@ class LambdasAsArgumentDemo {
 public class LambdasAsArgs {
     public static void main(String[] args) {
 
+
+        String vishalBalaIsGreat = LambdasAsArgumentDemo.function(String::toUpperCase, "Vishal bala is great");
+        System.out.println(vishalBalaIsGreat);
         // Converting string to uppercase
         String upCase = "";
         upCase = LambdasAsArgumentDemo.function(String::toUpperCase , "hello everyone" );
