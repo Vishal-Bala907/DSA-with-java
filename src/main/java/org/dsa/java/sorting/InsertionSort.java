@@ -18,6 +18,7 @@ public class InsertionSort {
             arr[j + 1] = key;
         }
     }
+//    this is the bubble sort example
 
     public static void main(String[] args) {
         int arr[] = { 12, 11, 13, 5, 6 };
